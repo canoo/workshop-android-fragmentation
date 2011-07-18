@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Android 1.6 Platform"/>
+	<classpathentry kind="src" path="/api_level/src"/>
+	<classpathentry kind="src" path="/api_level/gen"/>
+	<classpathentry kind="output" path="/out/production/api_level"/>
+</classpath>
