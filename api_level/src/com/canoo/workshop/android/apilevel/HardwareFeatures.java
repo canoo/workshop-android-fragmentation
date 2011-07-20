@@ -1,10 +1,12 @@
 package com.canoo.workshop.android.apilevel;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.util.Log;
 
 /**
@@ -17,6 +19,9 @@ class HardwareFeatures {
     private boolean fAccelerometerPresent;
     private boolean fFrontFacingCameraPresent;
     private boolean fHardwareKeyboardPresent;
+    private boolean fMultitouchPresent;
+    private int fApiLevel;
+    private String fApiLevelCodename;
 
     HardwareFeatures(Context context) {
         //sensors
@@ -41,6 +46,15 @@ class HardwareFeatures {
 
         //hardware keyboard
         fHardwareKeyboardPresent = context.getResources().getConfiguration().keyboard != Configuration.KEYBOARD_NOKEYS;
+
+        try {
+            fMultitouchPresent = PackageManagerProvider.hasSystemFeature("android.hardware.touchscreen.multitouch", context);
+        } catch (VerifyError ve) {
+        }
+
+        fApiLevel = Build.VERSION.SDK_INT;
+        fApiLevelCodename = Build.VERSION.RELEASE;
+
     }
 
     boolean isTemperatureSensorPresent() {
@@ -57,5 +71,17 @@ class HardwareFeatures {
 
     boolean isHardwareKeyboardPresent() {
         return fHardwareKeyboardPresent;
+    }
+
+    boolean isMultitouchPresent() {
+        return fMultitouchPresent;
+    }
+
+    int getApiLevel() {
+        return fApiLevel;
+    }
+
+    String getApiLevelCodename() {
+        return fApiLevelCodename;
     }
 }

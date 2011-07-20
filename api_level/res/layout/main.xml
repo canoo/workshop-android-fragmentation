@@ -39,6 +39,19 @@
             android:text="Harware Keyboard"
             android:enabled="false"
             />
+    <CheckBox
+            android:id="@+id/Multitouch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Multitouch"
+            android:enabled="false"
+            />
+    <TextView
+            android:id="@+id/ApiLevel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            />
     <Button android:id="@+id/BackupButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -25,6 +25,8 @@ public class SampleActivity extends Activity {
         CheckBox accelerometer = (CheckBox) findViewById(R.id.Accelerometer);
         CheckBox frontCamera = (CheckBox) findViewById(R.id.FrontCamera);
         CheckBox hardwareKeyboard = (CheckBox) findViewById(R.id.Keyboard);
+        CheckBox multitouch = (CheckBox) findViewById(R.id.Multitouch);
+        TextView apiLevel = (TextView) findViewById(R.id.ApiLevel);
 
         //camera
         CameraFeatures cameraFeatures = new CameraFeatures();
@@ -35,6 +37,8 @@ public class SampleActivity extends Activity {
         accelerometer.setChecked(hardwareFeatures.isAccelerometerPresent());
         frontCamera.setChecked(hardwareFeatures.isFrontFacingCameraPresent());
         hardwareKeyboard.setChecked(hardwareFeatures.isHardwareKeyboardPresent());
+        multitouch.setChecked(hardwareFeatures.isMultitouchPresent());
+        apiLevel.setText("Software version: " + hardwareFeatures.getApiLevel() + " (" + hardwareFeatures.getApiLevelCodename() + ") ");
 
         //backup service
         Button button = (Button) findViewById(R.id.BackupButton);
