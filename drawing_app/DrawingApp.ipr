@@ -445,7 +445,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/api_level.iml" filepath="$PROJECT_DIR$/api_level.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawingApp.iml" filepath="$PROJECT_DIR$/DrawingApp.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
@@ -455,7 +455,23 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="" vcs="" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

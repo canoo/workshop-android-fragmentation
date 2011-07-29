@@ -5,20 +5,13 @@
  * should not be modified by hand.
  */
 
-package com.canoo.workshop.android.apilevel;
+package com.canoo.workshop.android.apilevel.drawing;
 
 public final class R {
     public static final class attr {
     }
     public static final class id {
-        public static final int Accelerometer=0x7f040002;
-        public static final int ApiLevel=0x7f040006;
-        public static final int BackupButton=0x7f040007;
-        public static final int FrontCamera=0x7f040003;
-        public static final int Keyboard=0x7f040004;
-        public static final int Multitouch=0x7f040005;
-        public static final int Temperature=0x7f040001;
-        public static final int Zoom=0x7f040000;
+        public static final int DrawView=0x7f040000;
     }
     public static final class layout {
         public static final int main=0x7f020000;
