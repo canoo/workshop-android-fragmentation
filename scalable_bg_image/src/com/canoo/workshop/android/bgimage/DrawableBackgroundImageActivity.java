@@ -7,7 +7,7 @@ public class DrawableBackgroundImageActivity extends MenuActivity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main_drawable);
     }
 	
 }
