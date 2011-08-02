@@ -2,7 +2,7 @@
 <scale
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:drawable="@drawable/background_image"
-    android:scaleGravity="center_vertical|center_horizontal"
-    android:scaleHeight="80%"
-    android:scaleWidth="80%"
+    android:scaleGravity="center"
+    android:scaleHeight="100%"
+    android:scaleWidth="100%"
 />
