@@ -5,9 +5,9 @@
     android:layout_height="fill_parent"
     android:background="@drawable/background_image_np_small"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello_np"
-    />
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/hello_np"
+	    />
 </LinearLayout>
