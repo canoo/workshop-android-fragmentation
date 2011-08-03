@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scalable BG Image</string>
+
+    <string name="hello">Watch the background image!</string>
+    <string name="hello_np">Watch the background image! (NinePatch)</string>
+    <string name="hello_layout">Watch the background image! (FrameLayout)</string>
+    <string name="hello_drawable">Watch the background image! (Drawable)</string>
+    
+    <string name="menu_default">Default</string>
+    <string name="menu_ninepatch">NinePatch</string>
+    <string name="menu_layout">FrameLayout</string>
+    <string name="menu_drawable">Drawable</string>
+</resources>

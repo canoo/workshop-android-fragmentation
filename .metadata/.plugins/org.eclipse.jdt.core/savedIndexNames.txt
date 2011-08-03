@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+/Users/andreashz/Development/android/workshop-android-fragmention/.metadata/.plugins/org.eclipse.jdt.core
+450068958.index
