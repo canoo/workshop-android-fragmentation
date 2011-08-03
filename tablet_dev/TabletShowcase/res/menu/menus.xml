@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu1"
+          android:showAsAction="always"
+          android:icon="@drawable/shoppingbasket_add"
+          android:title="Add"/>
+    <item android:id="@+id/menu2"
+          android:showAsAction="ifRoom|withText"
+          android:icon="@drawable/shoppingbasket_delete"
+          android:title="Delete"/>
+    <item android:id="@+id/menu4"
+          android:showAsAction="never"
+          android:title="Checkout"/>
+</menu>
