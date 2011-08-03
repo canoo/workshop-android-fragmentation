@@ -3,11 +3,13 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background_image_np_small"
+    android:layout_gravity="fill"
+    android:gravity="fill"
+    android:background="@drawable/background_image_np_small_content"
     >
 	<TextView  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
 	    android:text="@string/hello_np"
-	    />
+	    android:textSize="30dp"/>
 </LinearLayout>
