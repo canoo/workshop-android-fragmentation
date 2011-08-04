@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+              android:layout_height="wrap_content">
+    <ImageView
+    		android:id="@+id/PostListIcon"
+    		android:layout_width="80dp"
+    		android:layout_height="80dp"
+    		android:paddingLeft="10dp"
+    		android:paddingRight="5dp"
+    		android:src="@drawable/post_icon1">
+ 	</ImageView>
     <TextView
             android:id="@+id/PostListTitle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="16sp">
+            android:layout_toRightOf="@id/PostListIcon"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:text="@string/dev_title">
     </TextView>
     <TextView
             android:id="@+id/PostListAuthor"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:textSize="12sp">
+            android:layout_toRightOf="@id/PostListIcon"
+            android:layout_below="@id/PostListTitle"
+            android:paddingLeft="5dp"
+            android:textSize="12sp"
+            android:text="@string/dev_author">
     </TextView>
-</LinearLayout>
+</RelativeLayout>

@@ -11,6 +11,7 @@ class RssItem implements Serializable {
     String title;
     String link;
     String author;
+    String icon;
     List<String> categories;
     Date publishDate;
     String description;

@@ -16,6 +16,7 @@ class DataProvider {
         
         RssItem post1 = new RssItem();
         post1.title = "Java 7 Small Language Changes Screencast";
+        post1.icon = "post_icon1";
         post1.publishDate = new Date(111, 6, 14, 19, 53);
         post1.author = "Hamlet";
         post1.categories = Arrays.asList("Java", "Screencast", "Hamlet");
@@ -38,6 +39,7 @@ class DataProvider {
         
         RssItem post2 = new RssItem();
         post2.title = "Mock Objects with Spock Screencast";
+        post2.icon = "post_icon2";
         post2.publishDate = new Date(111, 6, 12, 23, 57);
         post2.author = "Hamlet";
         post2.categories = Arrays.asList("Groovy", "Screencast", "Hamlet", "Spock");
@@ -68,6 +70,7 @@ class DataProvider {
         
         RssItem post3 = new RssItem();
         post3.title = "What to Expect at Hackergarten";
+        post3.icon = "post_icon3";
         post3.publishDate = new Date(111, 4, 12, 10, 57);
         post3.author = "Hamlet";
         post3.categories = Arrays.asList("Events", "Hackergarten");
@@ -94,6 +97,7 @@ class DataProvider {
         
         RssItem post4 = new RssItem();
         post4.title = "Git training at Canoo with Matthew McCullough";
+        post4.icon = "post_icon4";
         post4.publishDate = new Date(111, 4, 6, 14, 55);
         post4.author = "Andreas";
         post4.categories = Arrays.asList("General", "Git", "Training");
