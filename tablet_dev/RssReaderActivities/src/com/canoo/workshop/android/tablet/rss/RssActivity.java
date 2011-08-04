@@ -1,13 +1,14 @@
 package com.canoo.workshop.android.tablet.rss;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -16,14 +17,24 @@ import java.util.List;
 public class RssActivity extends ListActivity
 {
 
-    private static final DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT);
+    static final DateFormat DATE_FORMAT = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT);
+    private RssFeed fRssFeedContent;
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        RssFeed rssFeedContent = new DataProvider().getRssFeedContent();
-        setListAdapter(new RssFeedArrayAdapter(this, R.layout.list_item, rssFeedContent.items));
+        fRssFeedContent = new DataProvider().getRssFeedContent();
+        setListAdapter(new RssFeedArrayAdapter(this, R.layout.list_item, fRssFeedContent.items));
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        RssItem rssItem = fRssFeedContent.items.get(position);
+        Intent intent = new Intent(this, RssDetailActivity.class);
+        intent.putExtra(RssDetailActivity.RSS_ITEM, rssItem);
+        startActivity(intent);
     }
 
     class RssFeedArrayAdapter extends ArrayAdapter<RssItem> {
@@ -45,8 +56,9 @@ public class RssActivity extends ListActivity
             TextView title = (TextView) listItemView.findViewById(R.id.PostListTitle);
             TextView author = (TextView) listItemView.findViewById(R.id.PostListAuthor);
             title.setText(item.title);
-            author.setText("by " + item.author + " on " + df.format(item.publishDate));
+            author.setText("by " + item.author + " on " + DATE_FORMAT.format(item.publishDate));
             return listItemView;
         }
+
     }
 }
