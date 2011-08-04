@@ -8,6 +8,8 @@
     		android:layout_height="80dp"
     		android:paddingLeft="10dp"
     		android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
     		android:src="@drawable/post_icon1">
  	</ImageView>
     <TextView
@@ -24,8 +26,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/PostListIcon"
-            android:layout_below="@id/PostListTitle"
+            android:layout_alignBottom="@id/PostListIcon"
             android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
             android:textSize="12sp"
             android:text="@string/dev_author">
     </TextView>
