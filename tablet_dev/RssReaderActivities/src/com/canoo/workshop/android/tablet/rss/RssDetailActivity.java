@@ -24,8 +24,18 @@ public class RssDetailActivity extends Activity {
         WebView content = (WebView) findViewById(R.id.RssItemContent);
 
         title.setText(item.title);
-        content.loadData(item.content, "text/html", "UTF-8");
-        author.setText("Posted by " + item.author + " on " + RssActivity.DATE_FORMAT.format(item.publishDate));
+        content.loadDataWithBaseURL("http://www.canoo.com/", wrapContentWithStyle(item), "text/html", "UTF-8", null);
         categories.setText(item.categories.toString());
+    }
+
+    private String wrapContentWithStyle(RssItem item) {
+        return "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
+                "<head>\n" +
+                "<link rel=\"stylesheet\" href=\"file:///android_asset/style.css\" type=\"text/css\"/>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                item.content +
+                "</body>\n" +
+                "</html>";
     }
 }
