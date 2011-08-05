@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Canoo Rss Feed</string>
+
+    <string name="dev_title">Java 7 Small Language Changes Screencast</string>
+    <string name="dev_author">Hamlet</string>
 </resources>
