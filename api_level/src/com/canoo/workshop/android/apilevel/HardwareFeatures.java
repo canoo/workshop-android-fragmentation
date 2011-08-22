@@ -48,7 +48,7 @@ class HardwareFeatures {
         fHardwareKeyboardPresent = context.getResources().getConfiguration().keyboard != Configuration.KEYBOARD_NOKEYS;
 
         try {
-            fMultitouchPresent = PackageManagerProvider.hasSystemFeature("android.hardware.touchscreen.multitouch", context);
+            fMultitouchPresent = PackageManagerProvider.hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH, context);
         } catch (VerifyError ve) {
         }
 

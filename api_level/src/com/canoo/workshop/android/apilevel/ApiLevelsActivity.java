@@ -1,6 +1,7 @@
 package com.canoo.workshop.android.apilevel;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class SampleActivity extends Activity {
+public class ApiLevelsActivity extends Activity {
 
     public static final String BACKUP_SERVICE = "BackupService";
 
@@ -44,7 +45,7 @@ public class SampleActivity extends Activity {
         Button button = (Button) findViewById(R.id.BackupButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                BackupProvider.backup(SampleActivity.this);
+                BackupProvider.backup(ApiLevelsActivity.this);
             }
         });
         if (!BackupProvider.isBackupServicePresent()) {
