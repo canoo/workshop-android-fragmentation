@@ -35,39 +35,17 @@ public class RssDetailFragment extends Fragment {
         fCategories.setVisibility(View.INVISIBLE);
         fContent.setVisibility(View.INVISIBLE);
 
-        fContent.setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View view) {
-                fContent.startActionMode(new ActionMode.Callback() {
-                    public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                        actionMode.setTitle(fTitle.getText());
-                        getActivity().getMenuInflater().inflate(R.menu.rss_detail_menu, menu);
-                        return true;
-                    }
-
-                    public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-                        return false;
-                    }
-
-                    public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-                        if (fRssItem != null) {
-                            Intent intent = new Intent(Intent.ACTION_SEND)
-                                    .putExtra(Intent.EXTRA_STREAM, fRssItem.content)
-                                    .setType("text/html");
-                            startActivity(Intent.createChooser(intent, "Share Article"));
-
-                            return true;
-                        }
-                        return false;
-                    }
-
-                    public void onDestroyActionMode(ActionMode actionMode) {
-                    }
-                });
-                return true;
-            }
-        });
+        try {
+            new RssDetailContextualMenuProvider(this).initialize(fContent);
+        } catch (VerifyError ve) {
+            //ignore, no support for Contextual ActionBar
+        }
 
         return fragmentView;
+    }
+
+    RssItem getRssItem() {
+        return fRssItem;
     }
 
     void setRssItem(RssItem item) {

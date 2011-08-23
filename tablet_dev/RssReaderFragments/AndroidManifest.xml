@@ -14,5 +14,5 @@
         <activity android:name=".RssFeedDetailActivity"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-sdk android:targetSdkVersion="11" android:minSdkVersion="5"/>
+    <uses-sdk android:targetSdkVersion="11" android:minSdkVersion="4"/>
 </manifest>

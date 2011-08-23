@@ -248,7 +248,7 @@ small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockqu
 	}
 
 code {
-	font: 1.1em 'Courier New', Courier, monospace, Fixed;
+	font: 12px 'Courier New', Courier, monospace, Fixed;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	padding: 5px 5px 5px 5px;
@@ -259,7 +259,7 @@ code {
 	}
 
 pre	{
-	font: 1.1em 'Courier New', Courier, monospace, Fixed;
+	font: 12px 'Courier New', Courier, monospace, Fixed;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	padding: 5px 5px 5px 5px;
