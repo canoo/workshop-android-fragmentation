@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 public class ApiLevelsActivity extends Activity {
 
-    public static final String BACKUP_SERVICE = "BackupService";
-
     /**
      * Called when the activity is first created.
      */
