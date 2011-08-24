@@ -1,8 +1,10 @@
 package com.canoo.workshop.android.apilevel.drawing;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.hardware.*;
 import android.os.Bundle;
+import android.util.Log;
 
 public class DrawActivity extends Activity
 {
@@ -10,7 +12,7 @@ public class DrawActivity extends Activity
     private DrawView fDrawView;
     private AccelerometerListener fAccelerometerListener;
     public static final float ACC_THRESHOLD = 2.0f;
-    private boolean fUseAccelerometer = false;
+    private boolean fUseAccelerometer = true;
 
     /** Called when the activity is first created. */
     @Override
@@ -20,13 +22,22 @@ public class DrawActivity extends Activity
         setContentView(R.layout.main);
         fDrawView = (DrawView) findViewById(R.id.DrawView);
         fAccelerometerListener = new AccelerometerListener();
-        DrawState lastNonConfigurationInstance = (DrawState) getLastNonConfigurationInstance();
-        if (lastNonConfigurationInstance != null) {
-            fDrawView.setDrawState(lastNonConfigurationInstance);
-        }
+        detectInputMethod();
     }
 
-    @Override
+    /**
+     * TODO insert your hardware detection code in this method
+     */
+    private void detectInputMethod() {
+		fUseAccelerometer = true;
+		fDrawView.setUseKeyboardInput(false);
+		if (fUseAccelerometer) {
+			//make sure orientation does not change because of sensor input
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
+	}
+
+	@Override
     protected void onResume() {
         super.onResume();
         fDrawView.requestFocus();
@@ -46,11 +57,6 @@ public class DrawActivity extends Activity
             SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
             sensorManager.unregisterListener(fAccelerometerListener);
         }
-    }
-
-    @Override
-    public Object onRetainNonConfigurationInstance() {
-        return new DrawState(fDrawView.getBitmap(), fDrawView.getPointer());
     }
 
     private class AccelerometerListener implements SensorEventListener {

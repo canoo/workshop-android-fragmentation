@@ -4,8 +4,11 @@ import android.content.Context;
 import android.graphics.*;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -13,7 +16,7 @@ import java.util.TimerTask;
 /**
  * This View allows the user to draw lines by using Keyboard input.
  * <p/>
- * onKeyDown and onKeyUp are overriden, drawing happens between these calls (starting when 'onKeyDown'
+ * onKeyDown and onKeyUp are overridden, drawing happens between these calls (starting when 'onKeyDown'
  * is called for a specific input, line is drawn until 'onKeyUp' is called for this key)
  * <p/>
  * The drawing is handled in a separate animation thread (using a Timer), after each animation step
@@ -68,6 +71,11 @@ public class DrawView extends View {
      * the timer thread
      */
     private final Object fDrawLock = new Object();
+    
+    /**
+     * Whether key presses should be captured and used for drawing
+     */
+    private boolean fUseKeyboardInput = false;
 
     public DrawView(Context context) {
         super(context);
@@ -83,7 +91,7 @@ public class DrawView extends View {
 
     private void initBitmap() {
         synchronized (fDrawLock) {
-            //initialise image to the size of the view
+            //Initialize image to the size of the view
             fBitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.RGB_565);
             fPointer = new Point(getWidth() / 2, getHeight() / 2);
             fBitmap.eraseColor(Color.WHITE);
@@ -110,37 +118,41 @@ public class DrawView extends View {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_Q) {
-            fInputTask.fVy = -SPEED;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_A) {
-            fInputTask.fVy = SPEED;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_O) {
-            fInputTask.fVx = -SPEED;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_P) {
-            fInputTask.fVx = SPEED;
-            return true;
-        }
+    	if (fUseKeyboardInput) {
+	        if (keyCode == KeyEvent.KEYCODE_Q) {
+	            fInputTask.fVy = -SPEED;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_A) {
+	            fInputTask.fVy = SPEED;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_O) {
+	            fInputTask.fVx = -SPEED;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_P) {
+	            fInputTask.fVx = SPEED;
+	            return true;
+	        }
+    	}
         return super.onKeyDown(keyCode, event);
     }
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_Q) {
-            fInputTask.fVy = 0;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_A) {
-            fInputTask.fVy = 0;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_O) {
-            fInputTask.fVx = 0;
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_P) {
-            fInputTask.fVx = 0;
-            return true;
-        }
+    	if (fUseKeyboardInput) {
+	        if (keyCode == KeyEvent.KEYCODE_Q) {
+	            fInputTask.fVy = 0;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_A) {
+	            fInputTask.fVy = 0;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_O) {
+	            fInputTask.fVx = 0;
+	            return true;
+	        } else if (keyCode == KeyEvent.KEYCODE_P) {
+	            fInputTask.fVx = 0;
+	            return true;
+	        }
+    	}
         return super.onKeyUp(keyCode, event);
     }
 
@@ -187,8 +199,13 @@ public class DrawView extends View {
         fPointer = drawState.fPointer;
         initOthers();
     }
+    
+    void setUseKeyboardInput(boolean useKeyboardInput) {
+		this.fUseKeyboardInput = useKeyboardInput;
+	}
 
-    class InputTask extends TimerTask {
+
+	class InputTask extends TimerTask {
 
         private int fVx = 0;
         private int fVy = 0;
@@ -198,7 +215,7 @@ public class DrawView extends View {
         @Override
         public void run() {
             if (fBitmap == null) {
-                //bitmap has not been initialised yet
+                //bitmap has not been initialized yet
                 return;
             }
             //compute distance on the 2 axes
