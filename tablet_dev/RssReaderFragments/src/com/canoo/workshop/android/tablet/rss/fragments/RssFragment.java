@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -51,11 +52,18 @@ public class RssFragment extends ListFragment
                 Log.d("REUSE", "Reusing view");
             }
             TextView title = (TextView) listItemView.findViewById(R.id.PostListTitle);
-            TextView author = (TextView) listItemView.findViewById(R.id.PostListAuthor);
             title.setText(item.title);
-            author.setText("by " + item.author + " on " + DATE_FORMAT.format(item.publishDate));
+            // optional fields
+            TextView author = (TextView) listItemView.findViewById(R.id.PostListAuthor);
+            if (author != null) {
+            	author.setText("by " + item.author + " on " + DATE_FORMAT.format(item.publishDate));
+            }
+            ImageView icon = (ImageView) listItemView.findViewById(R.id.PostListIcon);
+            if (icon != null) {
+	            int resId = getResources().getIdentifier("com.canoo.workshop.android.tablet.rss.fragments:drawable/"+item.icon, null, null);
+	            icon.setImageResource(resId);
+            }
             return listItemView;
         }
-
     }
 }

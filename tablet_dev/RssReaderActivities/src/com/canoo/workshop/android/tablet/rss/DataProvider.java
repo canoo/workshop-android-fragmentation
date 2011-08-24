@@ -14,11 +14,11 @@ class DataProvider {
         rssFeed.link = "http://www.canoo.com/blog";
         rssFeed.items = new ArrayList<RssItem>();
         
-        /*aa*/
         RssItem post1 = new RssItem();
         post1.title = "Code generation in GWT with Deferred Binding (CDI-like events)";
         post1.publishDate = new Date(111, 6, 4, 11, 22);
         post1.author = "Alberto";
+        post1.icon = "post_icon1";
         post1.categories = Arrays.asList("Java", "Code Generation", "EventBus", "GIN");
         post1.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/07/04/code-generation-in-gwt-with-deferred-binding-cdi-like-events/\";</script>code { font-size: 12px; overflow: auto; } If you read my series on GWT dependency injection (parts: first, second and third), maybe you remember that, in part 3, I mentioned how convenient would be to reduce the boilerplate required to define events in GWT. I also mentioned how elegant I find the event definition in [...]";
         post1.content = "<p>If you read my series on GWT dependency injection (parts: <a href='http://www.canoo.com/blog/2011/04/05/gwt-dependency-injection-recipes-using-gin'>first</a>, <a href='http://www.canoo.com/blog/2011/06/14/gwt-dependency-injection-recipes-using-gin-ii'>second</a> and <a href='http://www.canoo.com/blog/2011/06/20/gwt-dependency-injection-recipes-using-gin-iii'>third</a>), maybe you remember that, in part 3, I mentioned how convenient would be to reduce the boilerplate required to define events in GWT. I also mentioned how elegant I find the event definition in CDI. Wouldn&#8217;t it be nice to have a lightweight event model like that in GWT?</p>\n" +
@@ -208,6 +208,7 @@ class DataProvider {
         post2.title = "GWT Dependency Injection recipes using GIN (II)";
         post2.publishDate = new Date(111, 5, 14, 10, 43);
         post2.author = "Alberto";
+        post2.icon = "post_icon1";
         post2.categories = Arrays.asList("Java", "Dependency Injection", "GIN");
         post2.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/06/14/gwt-dependency-injection-recipes-using-gin-ii/\";</script>code { font-size: 12px; overflow: auto; } This is the second part of a series about Dependency Injection in Google Web Toolkit using GIN. If you have not yet read the first part, there we explained how to integrate GIN in an existing GWT sample application. In this second part, we will continue enhancing the [...]";
         post2.content = "<p>This is the second part of a series about Dependency Injection in Google Web Toolkit using GIN. If you have not yet read the <a href='http://www.canoo.com/blog/2011/04/05/gwt-dependency-injection-recipes-using-gin/'>first part</a>, there we explained how to integrate GIN in an existing GWT sample application. In this second part, we will continue enhancing the sample application while explaining other types of injection supported by GIN.</p>\n" +
@@ -397,6 +398,7 @@ class DataProvider {
         post3.title = "Hackergarten at Canoo 27.05.2011";
         post3.publishDate = new Date(111, 4, 26, 13, 23);
         post3.author = "Hamlet";
+        post3.icon = "post_icon3";
         post3.categories = Arrays.asList("Events", "Hackergarten");
         post3.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/26/hackergarten-at-canoo-27-05-2011/\";</script>Don&#8217;t forget! Tomorrow night is Hackergarten. On the last Friday of the month Canoo opens our doors for an open source programming group called Hackergarten. Our goal is to contribute in some way to open source software, to meet new friends, and to generally have a good time. In the past we have made contributions [...]";
         post3.content = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/26/hackergarten-at-canoo-27-05-2011/\";</script><p>Don&#8217;t forget! Tomorrow night is <a href=\"http://www.hackergarten.net\">Hackergarten</a>.</p>\n" +
@@ -409,6 +411,7 @@ class DataProvider {
         post4.title = "IntelliJ IDEA 10.5 for the Groovy and Grails Developer";
         post4.publishDate = new Date(111, 4, 23, 13, 54);
         post4.author = "Hamlet";
+        post4.icon = "post_icon2";
         post4.categories = Arrays.asList("Grails", "Groovy", "Idea");
         post4.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/23/intellij-idea-10-5-for-the-groovy-and-grails-developer/\";</script>The formal release of IntelliJ IDEA 10.5 came out this month, and the new Groovy features are all part of the free and open source Community Edition, and the Grails features are part of the Ultimate Edition. IDEA X (or 10 to you non-Romans) was a larger release of the product, and I already blogged [...]";
         post4.content = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/23/intellij-idea-10-5-for-the-groovy-and-grails-developer/\";</script><p>The formal release of <a href=\"http://www.jetbrains.com/idea/whatsnew/\">IntelliJ IDEA 10.5</a> came out this month, and the new Groovy features are all part of the free and open source Community Edition, and the Grails features are part of the Ultimate Edition. IDEA X (or 10 to you non-Romans) was a larger release of the product, and I already blogged about <a href=\"http://www.canoo.com/blog/2010/12/20/intellij-idea-x-for-groovy-developers/\">IDEA X for Groovy</a> and <a href=\"http://www.canoo.com/blog/2010/12/23/idea-x-for-the-grails-developer/\">IDEA X for Grails</a>. There&#8217;s still plenty of nice features in 10.5 though. The prices for IDEA recently dropped between $100 and $50, and anyone purchasing IDEA since last November gets 10.5 as a free upgrade.</p>\n" +
@@ -437,6 +440,7 @@ class DataProvider {
         post5.title = "What to Expect at Hackergarten";
         post5.publishDate = new Date(111, 4, 12, 10, 57);
         post5.author = "Hamlet";
+        post5.icon = "post_icon3";
         post5.categories = Arrays.asList("Events", "Hackergarten");
         post5.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/12/what-to-expect-at-hackergarten/\";</script>Hackergarten is on tour again, and in the next few days we have an all day coding event at GeeCON in Krakow (Saturday 14th May) and all night event at GR8 in Copenhagen (Tuesday 17th May). So what is Hackergarten anyway? Hackergarten is a group of people that come together to write open source code. [...]";
         post5.content = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/12/what-to-expect-at-hackergarten/\";</script><p><a href=\"http://hackergarten.net/\">Hackergarten</a> is on tour again, and in the next few days we have an all day coding event at <a href=\"http://2011.geecon.org/\">GeeCON in Krakow</a> (Saturday 14th May) and all night event at <a href=\"http://www.eu2011.gr8conf.org/\">GR8 in Copenhagen</a> (Tuesday 17th May). So what is Hackergarten anyway?</p>\n" +
@@ -463,6 +467,7 @@ class DataProvider {
         post6.title = "Git training at Canoo with Matthew McCullough";
         post6.publishDate = new Date(111, 4, 6, 14, 55);
         post6.author = "Andreas";
+        post6.icon = "post_icon4";
         post6.categories = Arrays.asList("General", "Git", "Training");
         post6.description = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/06/git-training-at-canoo-with-matthew-mccullough/\";</script>Yesterday I was lucky to attend an excellent git training at Canoo headquarters in Basel. Matthew McCullough of Ambient Ideas, Denver USA was invited by Canoo to share his expert Git knowledge with the people of Basel and nearby. Matthew is a first class trainer, speaking about Git at many conferences and also providing the [...]";
         post6.content = "<script type=\"text/javascript\">dzone_url = \"http://www.canoo.com/blog/2011/05/06/git-training-at-canoo-with-matthew-mccullough/\";</script><p>Yesterday I was lucky to attend an excellent <a href=\"http://git-scm.com/\">git</a> training at Canoo headquarters in Basel. Matthew McCullough of <a href=\"http://ambientideas.com/\">Ambient Ideas</a>, Denver USA was invited by Canoo to share his expert Git knowledge with the people of Basel and nearby. Matthew is a first class trainer, speaking about Git at many conferences and also providing the online git training (<a href=\"https://github.com/training/online\">https://github.com/training/online</a>).</p>\n" +
